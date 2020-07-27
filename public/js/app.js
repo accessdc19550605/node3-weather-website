@@ -1,5 +1,3 @@
-// console.log('Client side javascript file has loaded')
-
 // this client-side js will use the fetch api, which is only accessible on the front end, as it is browser-based
 // it is an asynchronous operation. Callback syntax is different from node.js, using the .then() function
 // promises and async await are other things we'll be looking at
@@ -24,14 +22,11 @@ weatherForm.addEventListener('submit', (e) => {
         response.json().then((data) => {
             console.log(data)
             if (data.error) {
-                // console.log(data.error)
                 messageOne.textContent = data.error
             }
             else {
                 messageOne.textContent = data.location
                 messageTwo.textContent = data.forecast
-                // console.log('Location: ', data.location)
-                // console.log('Forecast: ', data.forecast)
             }
         })
     })
