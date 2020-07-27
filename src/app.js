@@ -6,6 +6,7 @@ const forecast = require('./utils/forecast')
 
 // set up instance of Express
 const app = express()
+const port = process.env.PORT || 3000
 
 // define paths for Express config 
 // first, the root directory
@@ -92,7 +93,7 @@ app.get('/products', (req, res) => {
         })
     }
 
-    console.log(req.query)
+    // console.log(req.query)
 
     res.send({
         products: []
@@ -119,6 +120,6 @@ app.get('*', (req, res) => {
 
 
 // get the app to listen for requests
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })

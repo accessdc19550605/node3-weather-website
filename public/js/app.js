@@ -13,14 +13,12 @@ messageTwo.textContent = ''
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()  // stop browser from auto refreshing
     const location = encodeURI(search.value)
-    const searchUrl = 'http://localhost:3000/weather?address=' + location
+    const searchUrl = '/weather?address=' + location
 
-    console.log(searchUrl)
     messageOne.textContent = 'Loading..'
     messageTwo.textContent = ''
     fetch(searchUrl).then((response) => {
         response.json().then((data) => {
-            console.log(data)
             if (data.error) {
                 messageOne.textContent = data.error
             }
