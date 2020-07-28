@@ -17,7 +17,6 @@ const forecast = (latitude, longitude, callback) => {
             const { weather_descriptions, temperature, feelslike, wind_speed, humidity } = body.current  // destructuring
             description = 'It is currently ' + weather_descriptions[0] + ' with a temperature of ' + temperature + " degrees out. It feels like " + feelslike + ' degrees. The wind speed is currently ' + wind_speed + "mph " + " and humidity is " + humidity + "%"
             callback(undefined, description)
-            console.log(body)
         }
     })
 }
